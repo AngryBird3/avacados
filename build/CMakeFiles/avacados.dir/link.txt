@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libavacados.a CMakeFiles/avacados.dir/src/maze_node.cpp.o CMakeFiles/avacados.dir/src/maze_parser.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libavacados.a

@@ -1,0 +1,6 @@
+/Users/dharabalaji/CLionProjects/avacados/build/CMakeFiles/rebuild_cache.dir
+/Users/dharabalaji/CLionProjects/avacados/build/CMakeFiles/edit_cache.dir
+/Users/dharabalaji/CLionProjects/avacados/build/CMakeFiles/avacados.dir
+/Users/dharabalaji/CLionProjects/avacados/build/test/CMakeFiles/rebuild_cache.dir
+/Users/dharabalaji/CLionProjects/avacados/build/test/CMakeFiles/edit_cache.dir
+/Users/dharabalaji/CLionProjects/avacados/build/test/CMakeFiles/tests.dir
