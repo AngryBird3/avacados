@@ -49,6 +49,15 @@ void MazeParser::addNode(int row, int col, char c)
     {
         root = node_map[p];
     }
+    if (c == '@') // TODO make them global constant
+    {
+        ++avacados;
+    }
+}
+
+int MazeParser::getNumOfAvacados()
+{
+    return avacados;
 }
 
 void MazeParser::addAdjustNode(int r, int c)

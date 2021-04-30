@@ -17,6 +17,9 @@ public:
     MazeParser(std::string inputFile);
 
     MazeNode* getRootNode();
+    int getNumOfAvacados();
+    std::vector<MazeNode*> getAvacadoNodes();
+
 private:
     void addNode(int row, int col, char c);
     void buildGraph();
@@ -26,5 +29,6 @@ private:
     std::map<std::pair<int, int>, MazeNode*> node_map;
     int rows;
     int cols;
+    int avacados = 0;
 };
 #endif //AVACADOS_MAZE_PARSER_H

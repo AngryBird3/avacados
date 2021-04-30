@@ -28,8 +28,14 @@ public:
     /* get y co-ordinate */
     int getY();
 
+    /* get row, col of this node */
+    std::pair<int, int> getXY();
+
     /* return true if node contains avacado */
     bool hasAvacado();
+
+    /* removes avacado */
+    void removeAvacado();
 
 private:
     std::pair<int, int> location;

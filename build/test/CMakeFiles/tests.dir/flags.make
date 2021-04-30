@@ -4,7 +4,7 @@
 # compile CXX with /Library/Developer/CommandLineTools/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/Users/dharabalaji/CLionProjects/avacados/include -isystem /usr/local/include
+CXX_INCLUDES = -I/Users/dharabalaji/CLionProjects/avacados/test/include -I/Users/dharabalaji/CLionProjects/avacados/include -isystem /usr/local/include
 
 CXX_FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk -std=gnu++14
 

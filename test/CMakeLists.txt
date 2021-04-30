@@ -18,6 +18,7 @@ add_executable(
         test_maze_parser.cpp
 )
 target_link_libraries(tests avacados GTest::gtest GTest::gtest_main)
+target_include_directories(tests PUBLIC include)
 #add_test(NAME test_avacados COMMAND tests WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
 
 gtest_discover_tests(tests WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})

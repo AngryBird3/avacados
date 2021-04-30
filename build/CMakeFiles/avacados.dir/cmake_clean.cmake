@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/avacados.dir/src/maze_graph.cpp.o"
+  "CMakeFiles/avacados.dir/src/maze_graph.cpp.o.d"
   "CMakeFiles/avacados.dir/src/maze_node.cpp.o"
   "CMakeFiles/avacados.dir/src/maze_node.cpp.o.d"
   "CMakeFiles/avacados.dir/src/maze_parser.cpp.o"

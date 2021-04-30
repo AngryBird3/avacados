@@ -62,6 +62,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/avacados_main.dir/DependInfo.cmake"
   "CMakeFiles/avacados.dir/DependInfo.cmake"
   "test/CMakeFiles/tests.dir/DependInfo.cmake"
   )

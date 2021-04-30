@@ -5,6 +5,7 @@
 #include "maze_node.h"
 #include <iostream>
 
+
 MazeNode::MazeNode(std::pair<int, int> location, char val)
 {
     this->location = location;
@@ -31,7 +32,17 @@ int MazeNode::getY()
     return location.second;
 }
 
+std::pair<int, int> MazeNode::getXY()
+{
+    return location;
+}
+
 bool MazeNode::hasAvacado()
 {
     return containsAvacado;
+}
+
+void MazeNode::removeAvacado()
+{
+    containsAvacado = false;
 }

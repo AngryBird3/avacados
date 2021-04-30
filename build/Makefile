@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named avacados_main
+
+# Build rule for target.
+avacados_main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 avacados_main
+.PHONY : avacados_main
+
+# fast build rule for target.
+avacados_main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados_main.dir/build.make CMakeFiles/avacados_main.dir/build
+.PHONY : avacados_main/fast
+
+#=============================================================================
 # Target rules for targets named avacados
 
 # Build rule for target.
@@ -141,6 +154,54 @@ tests: cmake_check_build_system
 tests/fast:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/tests.dir/build.make test/CMakeFiles/tests.dir/build
 .PHONY : tests/fast
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados_main.dir/build.make CMakeFiles/avacados_main.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados_main.dir/build.make CMakeFiles/avacados_main.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados_main.dir/build.make CMakeFiles/avacados_main.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/maze_graph.o: src/maze_graph.cpp.o
+.PHONY : src/maze_graph.o
+
+# target to build an object file
+src/maze_graph.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make CMakeFiles/avacados.dir/src/maze_graph.cpp.o
+.PHONY : src/maze_graph.cpp.o
+
+src/maze_graph.i: src/maze_graph.cpp.i
+.PHONY : src/maze_graph.i
+
+# target to preprocess a source file
+src/maze_graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make CMakeFiles/avacados.dir/src/maze_graph.cpp.i
+.PHONY : src/maze_graph.cpp.i
+
+src/maze_graph.s: src/maze_graph.cpp.s
+.PHONY : src/maze_graph.s
+
+# target to generate assembly for a file
+src/maze_graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make CMakeFiles/avacados.dir/src/maze_graph.cpp.s
+.PHONY : src/maze_graph.cpp.s
 
 src/maze_node.o: src/maze_node.cpp.o
 .PHONY : src/maze_node.o
@@ -199,7 +260,14 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... avacados"
+	@echo "... avacados_main"
 	@echo "... tests"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/maze_graph.o"
+	@echo "... src/maze_graph.i"
+	@echo "... src/maze_graph.s"
 	@echo "... src/maze_node.o"
 	@echo "... src/maze_node.i"
 	@echo "... src/maze_node.s"
