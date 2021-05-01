@@ -9,6 +9,9 @@
 #include "maze_node.h"
 #include <vector>
 
+// should have used namespace
+using vector2d = vector<vector<char>>;
+
 // Class for representing floor (2DMap grid) with obstacles, start point and avacadoes
 class MazeParser
 {
@@ -30,5 +33,6 @@ private:
     int rows;
     int cols;
     int avacados = 0;
+    vector2d grid;
 };
 #endif //AVACADOS_MAZE_PARSER_H

@@ -2,7 +2,7 @@
 // Created by Dhara Balaji on 4/28/21.
 //
 
-#include "maze_graph.h"
+#include "shortest_path.h"
 #include <queue>
 #include <set>
 #include <vector>
@@ -44,7 +44,7 @@ std::pair<MazeNode*, int> DoBFS::find_shortest_path(MazeNode* root)
     throw std::invalid_argument("no more avacados remaining!");
 }
 
-paths DoBFS::find_shortest_path(MazeNode *root, int total_avacados)
+paths DoBFS::find_shortest_path(MazeNode *root, int total_avacados, std::vector<MazeNode *> avacados)
 {
     std::vector<std::string> moves;
     int dist;

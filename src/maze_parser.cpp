@@ -21,6 +21,7 @@ MazeParser::MazeParser(std::string inputFile)
         col = 0;
         for (const auto c : s)
         {
+            grid[row][col] = c;
             if (c != '#')
             {
                 addNode(row, col, c);

@@ -1,5 +1,5 @@
 #include <iostream>
-#include "maze_graph.h"
+#include "shortest_path.h"
 #include "maze_parser.h"
 
 int main(int argc, char **argv)

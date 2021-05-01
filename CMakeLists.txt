@@ -3,7 +3,7 @@ project(avacados)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_library(avacados src/maze_node.cpp src/maze_parser.cpp src/maze_graph.cpp src/A*.cpp)
+add_library(avacados src/maze_node.cpp src/maze_parser.cpp src/shortest_path.cpp src/A*.cpp include/A*.h src/shortest_path_astar.cpp)
 target_include_directories(avacados PUBLIC include)
 
 add_executable(avacados_main src/main.cpp)
