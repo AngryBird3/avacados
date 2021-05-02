@@ -155,6 +155,30 @@ tests/fast:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/tests.dir/build.make test/CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
+src/A*.o: src/A*.cpp.o
+.PHONY : src/A*.o
+
+# target to build an object file
+src/A*.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make "CMakeFiles/avacados.dir/src/A*.cpp.o"
+.PHONY : src/A*.cpp.o
+
+src/A*.i: src/A*.cpp.i
+.PHONY : src/A*.i
+
+# target to preprocess a source file
+src/A*.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make "CMakeFiles/avacados.dir/src/A*.cpp.i"
+.PHONY : src/A*.cpp.i
+
+src/A*.s: src/A*.cpp.s
+.PHONY : src/A*.s
+
+# target to generate assembly for a file
+src/A*.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make "CMakeFiles/avacados.dir/src/A*.cpp.s"
+.PHONY : src/A*.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -178,30 +202,6 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados_main.dir/build.make CMakeFiles/avacados_main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
-
-src/maze_graph.o: src/maze_graph.cpp.o
-.PHONY : src/maze_graph.o
-
-# target to build an object file
-src/maze_graph.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make CMakeFiles/avacados.dir/src/maze_graph.cpp.o
-.PHONY : src/maze_graph.cpp.o
-
-src/maze_graph.i: src/maze_graph.cpp.i
-.PHONY : src/maze_graph.i
-
-# target to preprocess a source file
-src/maze_graph.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make CMakeFiles/avacados.dir/src/maze_graph.cpp.i
-.PHONY : src/maze_graph.cpp.i
-
-src/maze_graph.s: src/maze_graph.cpp.s
-.PHONY : src/maze_graph.s
-
-# target to generate assembly for a file
-src/maze_graph.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make CMakeFiles/avacados.dir/src/maze_graph.cpp.s
-.PHONY : src/maze_graph.cpp.s
 
 src/maze_node.o: src/maze_node.cpp.o
 .PHONY : src/maze_node.o
@@ -251,6 +251,54 @@ src/maze_parser.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make CMakeFiles/avacados.dir/src/maze_parser.cpp.s
 .PHONY : src/maze_parser.cpp.s
 
+src/shortest_path.o: src/shortest_path.cpp.o
+.PHONY : src/shortest_path.o
+
+# target to build an object file
+src/shortest_path.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make CMakeFiles/avacados.dir/src/shortest_path.cpp.o
+.PHONY : src/shortest_path.cpp.o
+
+src/shortest_path.i: src/shortest_path.cpp.i
+.PHONY : src/shortest_path.i
+
+# target to preprocess a source file
+src/shortest_path.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make CMakeFiles/avacados.dir/src/shortest_path.cpp.i
+.PHONY : src/shortest_path.cpp.i
+
+src/shortest_path.s: src/shortest_path.cpp.s
+.PHONY : src/shortest_path.s
+
+# target to generate assembly for a file
+src/shortest_path.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make CMakeFiles/avacados.dir/src/shortest_path.cpp.s
+.PHONY : src/shortest_path.cpp.s
+
+src/shortest_path_astar.o: src/shortest_path_astar.cpp.o
+.PHONY : src/shortest_path_astar.o
+
+# target to build an object file
+src/shortest_path_astar.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o
+.PHONY : src/shortest_path_astar.cpp.o
+
+src/shortest_path_astar.i: src/shortest_path_astar.cpp.i
+.PHONY : src/shortest_path_astar.i
+
+# target to preprocess a source file
+src/shortest_path_astar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.i
+.PHONY : src/shortest_path_astar.cpp.i
+
+src/shortest_path_astar.s: src/shortest_path_astar.cpp.s
+.PHONY : src/shortest_path_astar.s
+
+# target to generate assembly for a file
+src/shortest_path_astar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/avacados.dir/build.make CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.s
+.PHONY : src/shortest_path_astar.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -262,18 +310,24 @@ help:
 	@echo "... avacados"
 	@echo "... avacados_main"
 	@echo "... tests"
+	@echo "... src/A*.o"
+	@echo "... src/A*.i"
+	@echo "... src/A*.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
-	@echo "... src/maze_graph.o"
-	@echo "... src/maze_graph.i"
-	@echo "... src/maze_graph.s"
 	@echo "... src/maze_node.o"
 	@echo "... src/maze_node.i"
 	@echo "... src/maze_node.s"
 	@echo "... src/maze_parser.o"
 	@echo "... src/maze_parser.i"
 	@echo "... src/maze_parser.s"
+	@echo "... src/shortest_path.o"
+	@echo "... src/shortest_path.i"
+	@echo "... src/shortest_path.s"
+	@echo "... src/shortest_path_astar.o"
+	@echo "... src/shortest_path_astar.i"
+	@echo "... src/shortest_path_astar.s"
 .PHONY : help
 
 

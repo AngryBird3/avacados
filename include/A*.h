@@ -15,10 +15,10 @@ struct AStarNode
 {
 public:
     AStarNode(std::pair<int, int> xy) : xy(xy), g_cost(0), h_cost(0) {}
-    uint g_cost, h_cost;
+    uint64_t g_cost, h_cost;
     std::pair<int, int> xy;
 
-    uint getScore();
+    uint64_t getScore();
 };
 
 
@@ -28,12 +28,12 @@ public:
     Astar(vector2d grid, int rows, int cols) :grid(grid), rows(rows), cols(cols) {}
 
     /* returns just the cost rather than entire path */
-    int findPath(std::pair<int, int> src, std::pair<int, int> dest);
+    int64_t findPath(std::pair<int, int> src, std::pair<int, int> dest);
 
 private:
     vector2d grid;
     int rows, cols;
-    uint euclidean(xy src, xy dest);
+    uint64_t euclidean(xy src, xy dest);
 
     xy getNeighbor(std::pair<int, int> pair, int i);
 
@@ -43,6 +43,7 @@ private:
 
     AStarNode *findNodeInOpen(std::vector<AStarNode *> vector, std::pair<int, int> pair);
 
+    uint64_t manhattan(xy src, xy dest);
 };
 
 #endif //AVACADOS_A_H

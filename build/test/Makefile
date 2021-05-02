@@ -130,6 +130,30 @@ tests/fast:
 	cd /Users/dharabalaji/CLionProjects/avacados/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/tests.dir/build.make test/CMakeFiles/tests.dir/build
 .PHONY : tests/fast
 
+test_A*.o: test_A*.cpp.o
+.PHONY : test_A*.o
+
+# target to build an object file
+test_A*.cpp.o:
+	cd /Users/dharabalaji/CLionProjects/avacados/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/tests.dir/build.make "test/CMakeFiles/tests.dir/test_A*.cpp.o"
+.PHONY : test_A*.cpp.o
+
+test_A*.i: test_A*.cpp.i
+.PHONY : test_A*.i
+
+# target to preprocess a source file
+test_A*.cpp.i:
+	cd /Users/dharabalaji/CLionProjects/avacados/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/tests.dir/build.make "test/CMakeFiles/tests.dir/test_A*.cpp.i"
+.PHONY : test_A*.cpp.i
+
+test_A*.s: test_A*.cpp.s
+.PHONY : test_A*.s
+
+# target to generate assembly for a file
+test_A*.cpp.s:
+	cd /Users/dharabalaji/CLionProjects/avacados/build && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/tests.dir/build.make "test/CMakeFiles/tests.dir/test_A*.cpp.s"
+.PHONY : test_A*.cpp.s
+
 test_maze_parser.o: test_maze_parser.cpp.o
 .PHONY : test_maze_parser.o
 
@@ -163,6 +187,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... tests"
+	@echo "... test_A*.o"
+	@echo "... test_A*.i"
+	@echo "... test_A*.s"
 	@echo "... test_maze_parser.o"
 	@echo "... test_maze_parser.i"
 	@echo "... test_maze_parser.s"

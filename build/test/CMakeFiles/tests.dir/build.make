@@ -83,21 +83,37 @@ test/CMakeFiles/tests.dir/test_maze_parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/test_maze_parser.cpp.s"
 	cd /Users/dharabalaji/CLionProjects/avacados/build/test && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dharabalaji/CLionProjects/avacados/test/test_maze_parser.cpp -o CMakeFiles/tests.dir/test_maze_parser.cpp.s
 
+test/CMakeFiles/tests.dir/test_A*.cpp.o: test/CMakeFiles/tests.dir/flags.make
+test/CMakeFiles/tests.dir/test_A*.cpp.o: ../test/test_A*.cpp
+test/CMakeFiles/tests.dir/test_A*.cpp.o: test/CMakeFiles/tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dharabalaji/CLionProjects/avacados/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/tests.dir/test_A*.cpp.o"
+	cd /Users/dharabalaji/CLionProjects/avacados/build/test && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT "test/CMakeFiles/tests.dir/test_A*.cpp.o" -MF "CMakeFiles/tests.dir/test_A*.cpp.o.d" -o "CMakeFiles/tests.dir/test_A*.cpp.o" -c "/Users/dharabalaji/CLionProjects/avacados/test/test_A*.cpp"
+
+test/CMakeFiles/tests.dir/test_A*.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tests.dir/test_A*.cpp.i"
+	cd /Users/dharabalaji/CLionProjects/avacados/build/test && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/dharabalaji/CLionProjects/avacados/test/test_A*.cpp" > "CMakeFiles/tests.dir/test_A*.cpp.i"
+
+test/CMakeFiles/tests.dir/test_A*.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tests.dir/test_A*.cpp.s"
+	cd /Users/dharabalaji/CLionProjects/avacados/build/test && /Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/dharabalaji/CLionProjects/avacados/test/test_A*.cpp" -o "CMakeFiles/tests.dir/test_A*.cpp.s"
+
 # Object files for target tests
 tests_OBJECTS = \
-"CMakeFiles/tests.dir/test_maze_parser.cpp.o"
+"CMakeFiles/tests.dir/test_maze_parser.cpp.o" \
+"CMakeFiles/tests.dir/test_A*.cpp.o"
 
 # External object files for target tests
 tests_EXTERNAL_OBJECTS =
 
 test/tests: test/CMakeFiles/tests.dir/test_maze_parser.cpp.o
+test/tests: test/CMakeFiles/tests.dir/test_A*.cpp.o
 test/tests: test/CMakeFiles/tests.dir/build.make
 test/tests: libavacados.a
 test/tests: /usr/local/lib/libgtest.a
 test/tests: /usr/local/lib/libgtest_main.a
 test/tests: /usr/local/lib/libgtest.a
 test/tests: test/CMakeFiles/tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dharabalaji/CLionProjects/avacados/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dharabalaji/CLionProjects/avacados/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable tests"
 	cd /Users/dharabalaji/CLionProjects/avacados/build/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tests.dir/link.txt --verbose=$(VERBOSE)
 	cd /Users/dharabalaji/CLionProjects/avacados/build/test && /usr/local/Cellar/cmake/3.20.1/bin/cmake -D TEST_TARGET=tests -D TEST_EXECUTABLE=/Users/dharabalaji/CLionProjects/avacados/build/test/tests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/Users/dharabalaji/CLionProjects/avacados -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=tests_TESTS -D CTEST_FILE=/Users/dharabalaji/CLionProjects/avacados/build/test/tests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -D TEST_XML_OUTPUT_DIR= -P /usr/local/Cellar/cmake/3.20.1/share/cmake/Modules/GoogleTestAddTests.cmake
 

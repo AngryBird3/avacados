@@ -19,6 +19,8 @@ MazeParser::MazeParser(std::string inputFile)
     while(ifs >> s) {
         cols = s.size();
         col = 0;
+        grid.resize(row+1);
+        grid[row].resize(cols);
         for (const auto c : s)
         {
             grid[row][col] = c;
@@ -31,7 +33,20 @@ MazeParser::MazeParser(std::string inputFile)
         ++row;
     }
     rows = row;
+    printGrid(grid);
     buildGraph();
+}
+
+void MazeParser::printGrid(vector2d grid)
+{
+    for (int i = 0; i < getRows(); i++)
+    {
+        for (int j = 0; j < getCols(); j++)
+        {
+            std::cout << grid[i][j] << " ";
+        }
+        std::cout << "\n";
+    }
 }
 
 void MazeParser::buildGraph()
@@ -53,6 +68,7 @@ void MazeParser::addNode(int row, int col, char c)
     if (c == '@') // TODO make them global constant
     {
         ++avacados;
+        avacadoNodes.push_back(node_map[p]);
     }
 }
 
@@ -91,3 +107,21 @@ MazeNode* MazeParser::getRootNode()
     return root;
 }
 
+vector2d MazeParser::getGrid()
+{
+    return grid;
+}
+
+size_t MazeParser::getRows()
+{
+    return rows;
+}
+
+size_t MazeParser::getCols()
+{
+    return cols;
+}
+
+std::vector<MazeNode *> MazeParser::getAvacadoNodes() {
+    return avacadoNodes;
+}

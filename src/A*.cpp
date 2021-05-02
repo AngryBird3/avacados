@@ -3,12 +3,18 @@
 //
 #include <functional>
 #include <A*.h>
-#include <algorithm>
+#include <cmath>
+#include <iostream>
 
-uint Astar::euclidean(xy src, xy dest)
+uint64_t Astar::euclidean(xy src, xy dest)
 {
     auto d = std::make_pair(abs(src.first - dest.first), abs(src.second - dest.second));
     return std::sqrt(std::pow(d.first, 2)) + std::pow(d.second, 2);
+}
+
+uint64_t Astar::manhattan(xy src, xy dest)
+{
+    return abs(src.first - dest.first) + abs(src.second - dest.second);
 }
 
 xy Astar::getNeighbor(std::pair<int, int> pair, int i) {
@@ -28,9 +34,15 @@ xy Astar::getNeighbor(std::pair<int, int> pair, int i) {
     }
 }
 
+/**
+ * Why would I not be able to iterator after iterating through entire vector?
+ * May be try with index like beign() + index
+ * @param nodes
+ * @return
+ */
 std::vector<AStarNode *>::iterator Astar::findNodeWithLeastFScore(std::vector<AStarNode *> nodes) {
-    auto curr = INTMAX_MAX;
-    std::vector<AStarNode *>::iterator p;
+    auto curr = INT64_MAX;
+    auto p = nodes.begin();
     for (auto i = nodes.begin(); i < nodes.end(); i++)
     {
         auto n = *i;
@@ -44,7 +56,8 @@ std::vector<AStarNode *>::iterator Astar::findNodeWithLeastFScore(std::vector<AS
 }
 
 bool Astar::safe(xy pair) {
-    return pair.first < rows && pair.second < cols && grid[pair.first][pair.second] != '#';
+    return pair.first < rows && pair.second < cols &&
+                pair.first >= 0 && pair.second >= 0 && grid[pair.first][pair.second] != '#';
 }
 
 AStarNode *Astar::findNodeInOpen(std::vector<AStarNode *> nodes, std::pair<int, int> pair) {
@@ -57,13 +70,15 @@ AStarNode *Astar::findNodeInOpen(std::vector<AStarNode *> nodes, std::pair<int, 
     return nullptr;
 }
 
-int Astar::findPath(std::pair<int, int> src, std::pair<int, int> dest)
+int64_t Astar::findPath(std::pair<int, int> src, std::pair<int, int> dest)
 {
+    // I can't use priority queue because I need to go through my queue and remove cur
     auto comparator = [](AStarNode *a, AStarNode* b)
     {
         return a->getScore() > b->getScore();
     };
 //    std::priority_queue<AStarNode*, std::vector<AStarNode*>, decltype(comparator)> open(comparator);
+
     std::vector<AStarNode*> open;
     std::vector<AStarNode*> closed;
 
@@ -72,22 +87,36 @@ int Astar::findPath(std::pair<int, int> src, std::pair<int, int> dest)
     while (!open.empty())
     {
         // get the node with least F score
-        auto current_it = findNodeWithLeastFScore(open);
-        auto current = *current_it;
+//        auto current_it = findNodeWithLeastFScore(open);
+//        auto current = *current_it;
+
+        auto p = open.begin();
+        auto current = *p;
+        for (auto i = open.begin(); i < open.end(); i++)
+        {
+            auto n = *i;
+            if (n->getScore() <= current->getScore())
+            {
+                current = n;
+                p = i;
+            }
+        }
 
         // if found destination return cost to reach this node
         if (current->xy == dest) {
             return current->g_cost;
         }
 
+        // add to close and remove cur
         closed.push_back(current);
+        open.erase(p);
 
         for(int i = 0; i < 4; i++)
         {
             auto neighborXY = getNeighbor(current->xy, i);
             if (!safe(neighborXY))
                 continue;
-            uint total_cost = current->g_cost + 1; //for this problem the cost is always +1
+            uint64_t total_cost = current->g_cost + 1; //for this problem the cost is always +1
             // let's see if we have in our openList
             AStarNode* next = findNodeInOpen(open, neighborXY);
             if (next != nullptr) {
@@ -103,9 +132,9 @@ int Astar::findPath(std::pair<int, int> src, std::pair<int, int> dest)
             }
         }
     }
-    return INTMAX_MAX;
+    return INT64_MAX;
 }
 
-uint AStarNode::getScore() {
+uint64_t AStarNode::getScore() {
     return g_cost + h_cost;
 }

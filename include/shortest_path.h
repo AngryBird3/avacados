@@ -6,9 +6,9 @@
 #define AVACADOS_SHORTEST_PATH_H
 
 #include<map>
+#include <utility>
 #include <vector>
 #include "maze_node.h"
-#include "addEdge.h"
 
 // TraverseMaze returns what is asked in the challenge
 struct paths
@@ -16,7 +16,7 @@ struct paths
 public:
     int total_moves;
     std::vector<std::string> moves_for_picking_avacados;
-    paths(int total_moves, std::vector<std::string> moves) : total_moves(total_moves), moves_for_picking_avacados(moves) {}
+    paths(int total_moves, std::vector<std::string> moves) : total_moves(total_moves), moves_for_picking_avacados(std::move(moves)) {}
 };
 
 // Base class
@@ -32,6 +32,7 @@ public:
      */
     virtual paths find_shortest_path(MazeNode* root, int total_avacados,
                                      std::vector<MazeNode*> avacados) = 0;
+    virtual ~TraverseMaze();
 };
 
 
@@ -50,6 +51,7 @@ private:
      * @return pair with new start node (with avacado) and its distance
      */
     std::pair<MazeNode*, int> find_shortest_path(MazeNode* root);
+
 };
 
 using vector2d = std::vector<std::vector<char>>;
@@ -61,34 +63,49 @@ struct GraphNode
 {
     GraphNode(xy loc) : location(loc) {}
     xy location;
-    std::list<edge> edges; //edge with weights
+    int id;
+    std::vector<std::pair<GraphNode*, int>> edges; //edge with weights
 
-    void addEdge(edge e)
+    void addEdge(GraphNode* e, int weight)
     {
-        edges.push_back(e);
+        edges.emplace_back(e, weight);
+    }
+    void setId(int i)
+    {
+        id = i;
     }
 };
 
 struct Graph
 {
-    Graph() : start(nullptr) {}
-    std::list<GraphNode *>nodes;
+    Graph() : start(nullptr), nodeId(0) {}
+    std::vector<GraphNode *>nodes;
     GraphNode* start;
+    int nodeId;
 
-    void addNode(GraphNode* n)
+    /**
+     * Add node to graph if it didn't already exist. I could have used unordered_map
+     * @param location
+     * @return
+     */
+    GraphNode* addNode(xy location)
     {
         // check if it already exists
         for (auto i : nodes)
         {
-            if (i->location == n->location) {
-                return;
+            if (i->location == location) {
+                return i;
             }
         }
+        auto n = new GraphNode(location);
+        n->setId(nodeId); nodeId++;
         nodes.push_back(n);
+        return n;
     }
+
     void setStartNode(GraphNode* n)
     {
-        if (start != nullptr)
+        if (start == nullptr)
             start = n;
     }
 };
@@ -112,7 +129,7 @@ private:
     int rows;
     int cols;
 
-    paths find_path_visiting_all_node(const Graph& g);
+    paths find_path_visiting_all_node(const Graph& g, int toal_avacaods);
 };
 
 #endif //AVACADOS_SHORTEST_PATH_H

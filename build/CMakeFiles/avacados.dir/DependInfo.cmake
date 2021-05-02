@@ -8,9 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/dharabalaji/CLionProjects/avacados/src/maze_graph.cpp" "CMakeFiles/avacados.dir/src/maze_graph.cpp.o" "gcc" "CMakeFiles/avacados.dir/src/maze_graph.cpp.o.d"
+  "/Users/dharabalaji/CLionProjects/avacados/src/A*.cpp" "CMakeFiles/avacados.dir/src/A*.cpp.o" "gcc" "CMakeFiles/avacados.dir/src/A*.cpp.o.d"
   "/Users/dharabalaji/CLionProjects/avacados/src/maze_node.cpp" "CMakeFiles/avacados.dir/src/maze_node.cpp.o" "gcc" "CMakeFiles/avacados.dir/src/maze_node.cpp.o.d"
   "/Users/dharabalaji/CLionProjects/avacados/src/maze_parser.cpp" "CMakeFiles/avacados.dir/src/maze_parser.cpp.o" "gcc" "CMakeFiles/avacados.dir/src/maze_parser.cpp.o.d"
+  "/Users/dharabalaji/CLionProjects/avacados/src/shortest_path.cpp" "CMakeFiles/avacados.dir/src/shortest_path.cpp.o" "gcc" "CMakeFiles/avacados.dir/src/shortest_path.cpp.o.d"
+  "/Users/dharabalaji/CLionProjects/avacados/src/shortest_path_astar.cpp" "CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o" "gcc" "CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o.d"
   )
 
 # Targets to which this target links.

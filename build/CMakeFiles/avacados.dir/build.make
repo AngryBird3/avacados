@@ -97,35 +97,67 @@ CMakeFiles/avacados.dir/src/maze_parser.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/avacados.dir/src/maze_parser.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dharabalaji/CLionProjects/avacados/src/maze_parser.cpp -o CMakeFiles/avacados.dir/src/maze_parser.cpp.s
 
-CMakeFiles/avacados.dir/src/maze_graph.cpp.o: CMakeFiles/avacados.dir/flags.make
-CMakeFiles/avacados.dir/src/maze_graph.cpp.o: ../src/maze_graph.cpp
-CMakeFiles/avacados.dir/src/maze_graph.cpp.o: CMakeFiles/avacados.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dharabalaji/CLionProjects/avacados/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/avacados.dir/src/maze_graph.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/avacados.dir/src/maze_graph.cpp.o -MF CMakeFiles/avacados.dir/src/maze_graph.cpp.o.d -o CMakeFiles/avacados.dir/src/maze_graph.cpp.o -c /Users/dharabalaji/CLionProjects/avacados/src/maze_graph.cpp
+CMakeFiles/avacados.dir/src/shortest_path.cpp.o: CMakeFiles/avacados.dir/flags.make
+CMakeFiles/avacados.dir/src/shortest_path.cpp.o: ../src/shortest_path.cpp
+CMakeFiles/avacados.dir/src/shortest_path.cpp.o: CMakeFiles/avacados.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dharabalaji/CLionProjects/avacados/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/avacados.dir/src/shortest_path.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/avacados.dir/src/shortest_path.cpp.o -MF CMakeFiles/avacados.dir/src/shortest_path.cpp.o.d -o CMakeFiles/avacados.dir/src/shortest_path.cpp.o -c /Users/dharabalaji/CLionProjects/avacados/src/shortest_path.cpp
 
-CMakeFiles/avacados.dir/src/maze_graph.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/avacados.dir/src/maze_graph.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dharabalaji/CLionProjects/avacados/src/maze_graph.cpp > CMakeFiles/avacados.dir/src/maze_graph.cpp.i
+CMakeFiles/avacados.dir/src/shortest_path.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/avacados.dir/src/shortest_path.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dharabalaji/CLionProjects/avacados/src/shortest_path.cpp > CMakeFiles/avacados.dir/src/shortest_path.cpp.i
 
-CMakeFiles/avacados.dir/src/maze_graph.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/avacados.dir/src/maze_graph.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dharabalaji/CLionProjects/avacados/src/maze_graph.cpp -o CMakeFiles/avacados.dir/src/maze_graph.cpp.s
+CMakeFiles/avacados.dir/src/shortest_path.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/avacados.dir/src/shortest_path.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dharabalaji/CLionProjects/avacados/src/shortest_path.cpp -o CMakeFiles/avacados.dir/src/shortest_path.cpp.s
+
+CMakeFiles/avacados.dir/src/A*.cpp.o: CMakeFiles/avacados.dir/flags.make
+CMakeFiles/avacados.dir/src/A*.cpp.o: ../src/A*.cpp
+CMakeFiles/avacados.dir/src/A*.cpp.o: CMakeFiles/avacados.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dharabalaji/CLionProjects/avacados/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/avacados.dir/src/A*.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT "CMakeFiles/avacados.dir/src/A*.cpp.o" -MF "CMakeFiles/avacados.dir/src/A*.cpp.o.d" -o "CMakeFiles/avacados.dir/src/A*.cpp.o" -c "/Users/dharabalaji/CLionProjects/avacados/src/A*.cpp"
+
+CMakeFiles/avacados.dir/src/A*.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/avacados.dir/src/A*.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/dharabalaji/CLionProjects/avacados/src/A*.cpp" > "CMakeFiles/avacados.dir/src/A*.cpp.i"
+
+CMakeFiles/avacados.dir/src/A*.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/avacados.dir/src/A*.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/dharabalaji/CLionProjects/avacados/src/A*.cpp" -o "CMakeFiles/avacados.dir/src/A*.cpp.s"
+
+CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o: CMakeFiles/avacados.dir/flags.make
+CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o: ../src/shortest_path_astar.cpp
+CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o: CMakeFiles/avacados.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/dharabalaji/CLionProjects/avacados/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o -MF CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o.d -o CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o -c /Users/dharabalaji/CLionProjects/avacados/src/shortest_path_astar.cpp
+
+CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dharabalaji/CLionProjects/avacados/src/shortest_path_astar.cpp > CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.i
+
+CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dharabalaji/CLionProjects/avacados/src/shortest_path_astar.cpp -o CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.s
 
 # Object files for target avacados
 avacados_OBJECTS = \
 "CMakeFiles/avacados.dir/src/maze_node.cpp.o" \
 "CMakeFiles/avacados.dir/src/maze_parser.cpp.o" \
-"CMakeFiles/avacados.dir/src/maze_graph.cpp.o"
+"CMakeFiles/avacados.dir/src/shortest_path.cpp.o" \
+"CMakeFiles/avacados.dir/src/A*.cpp.o" \
+"CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o"
 
 # External object files for target avacados
 avacados_EXTERNAL_OBJECTS =
 
 libavacados.a: CMakeFiles/avacados.dir/src/maze_node.cpp.o
 libavacados.a: CMakeFiles/avacados.dir/src/maze_parser.cpp.o
-libavacados.a: CMakeFiles/avacados.dir/src/maze_graph.cpp.o
+libavacados.a: CMakeFiles/avacados.dir/src/shortest_path.cpp.o
+libavacados.a: CMakeFiles/avacados.dir/src/A*.cpp.o
+libavacados.a: CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o
 libavacados.a: CMakeFiles/avacados.dir/build.make
 libavacados.a: CMakeFiles/avacados.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dharabalaji/CLionProjects/avacados/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libavacados.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/dharabalaji/CLionProjects/avacados/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libavacados.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/avacados.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/avacados.dir/link.txt --verbose=$(VERBOSE)
 

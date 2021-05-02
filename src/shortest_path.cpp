@@ -29,7 +29,6 @@ std::pair<MazeNode*, int> DoBFS::find_shortest_path(MazeNode* root)
         }
 
         visited.insert(node->getXY());
-        std::cout << "at node: " << node->getX() << "," << node->getY() << "steps= " << dist << "\n";
 
         for (auto n : node->getNeighbors())
         {
@@ -57,8 +56,10 @@ paths DoBFS::find_shortest_path(MazeNode *root, int total_avacados, std::vector<
         moves.push_back(std::string(std::to_string(root->getX()) + "," +
                         std::string(std::to_string(root->getY()))));
         total_moves += dist;
-        std::cout << "[DHARA_DEBUG] reached avacado at" << root->getX() << "," << root->getY() << " .. moves=" << dist << "\n";
     }
-    std::cout << "[DHARA_DEBUG] total moves = " << total_moves << "\n";
     return paths(total_moves, moves);
+}
+
+TraverseMaze::~TraverseMaze() {
+
 }

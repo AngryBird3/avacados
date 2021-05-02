@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/tests.dir/test_A*.cpp.o"
+  "CMakeFiles/tests.dir/test_A*.cpp.o.d"
   "CMakeFiles/tests.dir/test_maze_parser.cpp.o"
   "CMakeFiles/tests.dir/test_maze_parser.cpp.o.d"
   "tests"
