@@ -114,6 +114,7 @@ paths DoAstar::find_path_visiting_all_node(const Graph &g, int total_avacados)
     }
 
     // so now we have num of states which contains path with various cost. Let's find the min
+    // TODO should use priority queue
     auto min_cost = INT64_MAX;
     std::vector<std::string>  moves;
 
