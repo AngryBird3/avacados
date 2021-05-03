@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <queue>
+#include <list>
 
 using vector2d = std::vector<std::vector<char>>;
 using xy = std::pair<int, int>;
@@ -37,11 +38,11 @@ private:
 
     xy getNeighbor(std::pair<int, int> pair, int i);
 
-    std::vector<AStarNode *>::iterator findNodeWithLeastFScore(std::vector<AStarNode *> vector);
+    std::list<AStarNode *>::iterator findNodeWithLeastFScore(std::list<AStarNode *> vector);
 
     bool safe(xy pair);
 
-    AStarNode *findNodeInOpen(std::vector<AStarNode *> vector, std::pair<int, int> pair);
+    AStarNode *findNodeInOpen(std::list<AStarNode *> vector, std::pair<int, int> pair);
 
     uint64_t manhattan(xy src, xy dest);
 };

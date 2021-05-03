@@ -278,9 +278,9 @@ test/CMakeFiles/tests.dir/test_A*.cpp.o: ../test/test_A*.cpp \
   ../include/A*.h \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/queue \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/deque \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/list \
   ../include/maze_parser.h \
-  ../include/maze_node.h \
-  /Library/Developer/CommandLineTools/usr/include/c++/v1/list
+  ../include/maze_node.h
 
 test/CMakeFiles/tests.dir/test_maze_parser.cpp.o: ../test/test_maze_parser.cpp \
   /usr/local/include/gtest/gtest.h \
@@ -561,11 +561,11 @@ test/CMakeFiles/tests.dir/test_maze_parser.cpp.o: ../test/test_maze_parser.cpp \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/list
 
 
-/Library/Developer/CommandLineTools/usr/include/c++/v1/list:
-
 ../include/maze_node.h:
 
 ../include/maze_parser.h:
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/list:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/queue:
 

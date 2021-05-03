@@ -40,10 +40,10 @@ xy Astar::getNeighbor(std::pair<int, int> pair, int i) {
  * @param nodes
  * @return
  */
-std::vector<AStarNode *>::iterator Astar::findNodeWithLeastFScore(std::vector<AStarNode *> nodes) {
+std::list<AStarNode *>::iterator Astar::findNodeWithLeastFScore(std::list<AStarNode *> nodes) {
     auto curr = INT64_MAX;
     auto p = nodes.begin();
-    for (auto i = nodes.begin(); i < nodes.end(); i++)
+    for (auto i = nodes.begin(); i != nodes.end(); i++)
     {
         auto n = *i;
         if (n->getScore() <= curr)
@@ -55,12 +55,17 @@ std::vector<AStarNode *>::iterator Astar::findNodeWithLeastFScore(std::vector<AS
     return p;
 }
 
+/**
+ * Returns true if XY co-ordinate is within grid and not a wall
+ * @param pair
+ * @return
+ */
 bool Astar::safe(xy pair) {
     return pair.first < rows && pair.second < cols &&
                 pair.first >= 0 && pair.second >= 0 && grid[pair.first][pair.second] != '#';
 }
 
-AStarNode *Astar::findNodeInOpen(std::vector<AStarNode *> nodes, std::pair<int, int> pair) {
+AStarNode *Astar::findNodeInOpen(std::list<AStarNode *> nodes, std::pair<int, int> pair) {
     for (auto n : nodes)
     {
         if (n->xy == pair) {
@@ -79,7 +84,7 @@ int64_t Astar::findPath(std::pair<int, int> src, std::pair<int, int> dest)
     };
 //    std::priority_queue<AStarNode*, std::vector<AStarNode*>, decltype(comparator)> open(comparator);
 
-    std::vector<AStarNode*> open;
+    std::list<AStarNode*> open;
     std::vector<AStarNode*> closed;
 
     open.push_back(new AStarNode(src));
@@ -87,20 +92,20 @@ int64_t Astar::findPath(std::pair<int, int> src, std::pair<int, int> dest)
     while (!open.empty())
     {
         // get the node with least F score
-//        auto current_it = findNodeWithLeastFScore(open);
-//        auto current = *current_it;
+        auto current_it = findNodeWithLeastFScore(open);
+        auto current = *current_it;
 
-        auto p = open.begin();
-        auto current = *p;
-        for (auto i = open.begin(); i < open.end(); i++)
-        {
-            auto n = *i;
-            if (n->getScore() <= current->getScore())
-            {
-                current = n;
-                p = i;
-            }
-        }
+//        auto p = open.begin();
+//        auto current = *p;
+//        for (auto i = open.begin(); i < open.end(); i++)
+//        {
+//            auto n = *i;
+//            if (n->getScore() <= current->getScore())
+//            {
+//                current = n;
+//                p = i;
+//            }
+//        }
 
         // if found destination return cost to reach this node
         if (current->xy == dest) {
@@ -109,7 +114,8 @@ int64_t Astar::findPath(std::pair<int, int> src, std::pair<int, int> dest)
 
         // add to close and remove cur
         closed.push_back(current);
-        open.erase(p);
+//        open.erase(p);
+        open.erase(current_it);
 
         for(int i = 0; i < 4; i++)
         {

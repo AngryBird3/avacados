@@ -142,6 +142,7 @@ CMakeFiles/avacados.dir/src/A*.cpp.o: ../src/A*.cpp \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/__split_buffer \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/queue \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/deque \
+  /Library/Developer/CommandLineTools/usr/include/c++/v1/list \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/cmath \
   /Library/Developer/CommandLineTools/usr/include/c++/v1/math.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/math.h \
@@ -1194,10 +1195,6 @@ CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o: ../src/shortest_path_asta
 
 ../src/maze_parser.cpp:
 
-../src/shortest_path.cpp:
-
-/Library/Developer/CommandLineTools/usr/include/c++/v1/list:
-
 ../include/maze_node.h:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/bitset:
@@ -1321,10 +1318,6 @@ CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o: ../src/shortest_path_asta
 /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/i386/limits.h:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/wctype.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/mach/machine/_structs.h:
-
-/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/xlocale/_wchar.h:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/cctype:
 
@@ -1616,6 +1609,10 @@ CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o: ../src/shortest_path_asta
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/_types/_intmax_t.h:
 
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/xlocale/_wchar.h:
+
+/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/mach/machine/_structs.h:
+
 /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types/_rune_t.h:
@@ -1645,6 +1642,10 @@ CMakeFiles/avacados.dir/src/shortest_path_astar.cpp.o: ../src/shortest_path_asta
 /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/sys/_types/_mode_t.h:
 
 /Library/Developer/CommandLineTools/usr/lib/clang/11.0.3/include/stddef.h:
+
+../src/shortest_path.cpp:
+
+/Library/Developer/CommandLineTools/usr/include/c++/v1/list:
 
 /Library/Developer/CommandLineTools/usr/include/c++/v1/cstdlib:
 
