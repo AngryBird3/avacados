@@ -4,7 +4,6 @@
 #include <functional>
 #include <A*.h>
 #include <cmath>
-#include <iostream>
 
 uint64_t Astar::euclidean(xy src, xy dest)
 {
@@ -35,27 +34,6 @@ xy Astar::getNeighbor(std::pair<int, int> pair, int i) {
 }
 
 /**
- * Why would I not be able to iterator after iterating through entire vector?
- * May be try with index like beign() + index
- * @param nodes
- * @return
- */
-std::list<AStarNode *>::iterator Astar::findNodeWithLeastFScore(std::list<AStarNode *> nodes) {
-    auto curr = INT64_MAX;
-    auto p = nodes.begin();
-    for (auto i = nodes.begin(); i != nodes.end(); i++)
-    {
-        auto n = *i;
-        if (n->getScore() <= curr)
-        {
-            curr = n->getScore();
-            p = i;
-        }
-    }
-    return p;
-}
-
-/**
  * Returns true if XY co-ordinate is within grid and not a wall
  * @param pair
  * @return
@@ -65,7 +43,7 @@ bool Astar::safe(xy pair) {
                 pair.first >= 0 && pair.second >= 0 && grid[pair.first][pair.second] != '#';
 }
 
-AStarNode *Astar::findNodeInOpen(std::list<AStarNode *> nodes, std::pair<int, int> pair) {
+AStarNode* Astar::findNodeInOpen(const std::list<AStarNode *>& nodes, std::pair<int, int> pair) {
     for (auto n : nodes)
     {
         if (n->xy == pair) {
@@ -77,13 +55,6 @@ AStarNode *Astar::findNodeInOpen(std::list<AStarNode *> nodes, std::pair<int, in
 
 int64_t Astar::findPath(std::pair<int, int> src, std::pair<int, int> dest)
 {
-    // I can't use priority queue because I need to go through my queue and remove cur
-    auto comparator = [](AStarNode *a, AStarNode* b)
-    {
-        return a->getScore() > b->getScore();
-    };
-//    std::priority_queue<AStarNode*, std::vector<AStarNode*>, decltype(comparator)> open(comparator);
-
     std::list<AStarNode*> open;
     std::vector<AStarNode*> closed;
 
@@ -92,30 +63,26 @@ int64_t Astar::findPath(std::pair<int, int> src, std::pair<int, int> dest)
     while (!open.empty())
     {
         // get the node with least F score
-        auto current_it = findNodeWithLeastFScore(open);
-        auto current = *current_it;
+        auto p = open.begin();
+        auto current = *p;
+        for (auto i = open.begin(); i != open.end(); i++)
+        {
+            auto n = *i;
+            if (n->getScore() <= current->getScore())
+            {
+                current = n;
+                p = i;
+            }
+        }
 
-//        auto p = open.begin();
-//        auto current = *p;
-//        for (auto i = open.begin(); i < open.end(); i++)
-//        {
-//            auto n = *i;
-//            if (n->getScore() <= current->getScore())
-//            {
-//                current = n;
-//                p = i;
-//            }
-//        }
-
-        // if found destination return cost to reach this node
+        // if we find destination return the cost to reach this node
         if (current->xy == dest) {
             return current->g_cost;
         }
 
         // add to close and remove cur
         closed.push_back(current);
-//        open.erase(p);
-        open.erase(current_it);
+        open.erase(p);
 
         for(int i = 0; i < 4; i++)
         {
@@ -123,7 +90,7 @@ int64_t Astar::findPath(std::pair<int, int> src, std::pair<int, int> dest)
             if (!safe(neighborXY))
                 continue;
             uint64_t total_cost = current->g_cost + 1; //for this problem the cost is always +1
-            // let's see if we have in our openList
+            // let's see if we have this node in our openList
             AStarNode* next = findNodeInOpen(open, neighborXY);
             if (next != nullptr) {
                 // update neighbor cost if we should
@@ -141,6 +108,6 @@ int64_t Astar::findPath(std::pair<int, int> src, std::pair<int, int> dest)
     return INT64_MAX;
 }
 
-uint64_t AStarNode::getScore() {
+uint64_t AStarNode::getScore() const {
     return g_cost + h_cost;
 }

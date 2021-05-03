@@ -6,6 +6,8 @@
 #include <fstream>
 #include <iostream>
 
+// This file contains Parser definition which parses text grid/maze into 2D vector and a graph representation
+
 MazeParser::MazeParser(std::string inputFile)
 {
     std::ifstream ifs(inputFile);
@@ -72,7 +74,7 @@ void MazeParser::addNode(int row, int col, char c)
     }
 }
 
-int MazeParser::getNumOfAvacados()
+int MazeParser::getNumOfAvacados() const
 {
     return avacados;
 }
@@ -112,12 +114,12 @@ vector2d MazeParser::getGrid()
     return grid;
 }
 
-size_t MazeParser::getRows()
+size_t MazeParser::getRows() const
 {
     return rows;
 }
 
-size_t MazeParser::getCols()
+size_t MazeParser::getCols() const
 {
     return cols;
 }

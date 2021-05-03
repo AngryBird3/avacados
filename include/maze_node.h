@@ -1,5 +1,5 @@
 //
-// Created by Dhara Balaji on 4/28/21.
+// Created by Dhara Balaji
 //
 
 #ifndef AVACADOS_MAZE_NODE_H
@@ -9,11 +9,16 @@
 
 /*
  * Class for representing 2DMap cell as node.
- * Two nodes are connected if there is no obstacles.
+ * Two nodes are connected if there is no obstacle between them.
  */
 class MazeNode
 {
 public:
+    /**
+     *
+     * @param location  grid co-ordinate for this node (cell)
+     * @param val node(cell) value
+     */
     MazeNode(std::pair<int, int> location, char val);
 
     /* Get connected nodes to this node */
@@ -23,16 +28,16 @@ public:
     void addEdge(MazeNode* node);
 
     /* get x co-ordinate */
-    int getX();
+    int getX() const;
 
     /* get y co-ordinate */
-    int getY();
+    int getY() const;
 
     /* get row, col of this node */
-    std::pair<int, int> getXY();
+    std::pair<int, int> getXY() const;
 
     /* return true if node contains avacado */
-    bool hasAvacado();
+    bool hasAvacado() const;
 
     /* removes avacado */
     void removeAvacado();

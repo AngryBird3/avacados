@@ -3,15 +3,24 @@
 //
 
 #include "maze_node.h"
-#include <iostream>
 
+// This file contains Node definition for maze which is used to traverse maze as graph through BFS
 
+/**
+ *
+ * @param location cell (row, col)
+ * @param val value of cell
+ */
 MazeNode::MazeNode(std::pair<int, int> location, char val)
 {
     this->location = location;
     this->containsAvacado = (val == '@');
 }
 
+/**
+ *
+ * @param node neighbor node
+ */
 void MazeNode::addEdge(MazeNode* node)
 {
     this->neighbors.emplace_back(node);
@@ -22,22 +31,22 @@ std::list<MazeNode*> MazeNode::getNeighbors()
     return neighbors;
 }
 
-int MazeNode::getX()
+int MazeNode::getX() const
 {
     return location.first;
 }
 
-int MazeNode::getY()
+int MazeNode::getY() const
 {
     return location.second;
 }
 
-std::pair<int, int> MazeNode::getXY()
+std::pair<int, int> MazeNode::getXY() const
 {
     return location;
 }
 
-bool MazeNode::hasAvacado()
+bool MazeNode::hasAvacado() const
 {
     return containsAvacado;
 }

@@ -1,5 +1,5 @@
 //
-// Created by Dhara Balaji on 4/28/21.
+// Created by Dhara Balaji
 //
 
 #ifndef AVACADOS_SHORTEST_PATH_H
@@ -9,6 +9,13 @@
 #include <utility>
 #include <vector>
 #include "maze_node.h"
+
+/**
+ * This file defines API for finding moves/shortest path to collect all avacaods
+ * TraverseMaze is interface and two implementation of the same:
+ * 1. DoBFS - Go to nearest neighbor
+ * 2. Astar + modified Dijkstra
+ */
 
 // TraverseMaze returns what is asked in the challenge
 struct paths

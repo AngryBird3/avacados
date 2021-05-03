@@ -51,19 +51,6 @@ paths DoAstar::find_shortest_path(MazeNode *root, int total_avacados, std::vecto
             }
         }
     }
-//    std::cout << "[DHARA_DEBUG: shortest_path_astar] << done with step1\n";
-//    std::cout << "[DHARA_DEBUG] start node's edges are ...\n";
-//    for (auto n : g.nodes)
-//    {
-//        std::cout << "node= ";
-//        std::cout << n->location.first << "," << n->location.second << "\n";
-//        std::cout << "      edges = ";
-//        for (auto e : n->edges)
-//        {
-//            std::cout << e.first->location.first << "," << e.first->location.second << ", ";
-//        }
-//        std::cout << "\n";
-//    }
     // step2
     return find_path_visiting_all_node(g, total_avacados);
 }

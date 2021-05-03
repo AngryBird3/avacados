@@ -1,5 +1,5 @@
 //
-// Created by Dhara Balaji on 4/28/21.
+// Created by Dhara Balaji
 //
 
 #ifndef AVACADOS_MAZE_PARSER_H
@@ -12,7 +12,7 @@
 // should have used namespace
 using vector2d = std::vector<std::vector<char>>;
 
-// Class for representing floor (2DMap grid) with obstacles, start point and avacadoes
+// Class for representing floor/maze (2DMap grid) with obstacles, start point and avacadoes
 class MazeParser
 {
 public:
@@ -29,7 +29,7 @@ public:
      *
      * @return num of avacados in grid
      */
-    int getNumOfAvacados();
+    int getNumOfAvacados() const;
 
     /**
      *
@@ -46,12 +46,12 @@ public:
     /**
      * max num of rows in grid
      */
-    size_t getRows();
+    size_t getRows() const;
 
     /**
      * max num of cols in grid
      */
-    size_t getCols();
+    size_t getCols() const;
 
 private:
     void addNode(int row, int col, char c);

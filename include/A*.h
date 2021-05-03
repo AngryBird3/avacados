@@ -1,5 +1,5 @@
 //
-// Created by dhara on 4/30/21.
+// Created by Dhara Balaji
 //
 
 #ifndef AVACADOS_A_H
@@ -8,6 +8,10 @@
 #include <vector>
 #include <queue>
 #include <list>
+
+/**
+ * This file contains Astar related declarations
+ */
 
 using vector2d = std::vector<std::vector<char>>;
 using xy = std::pair<int, int>;
@@ -19,7 +23,7 @@ public:
     uint64_t g_cost, h_cost;
     std::pair<int, int> xy;
 
-    uint64_t getScore();
+    uint64_t getScore() const;
 };
 
 
@@ -34,15 +38,13 @@ public:
 private:
     vector2d grid;
     int rows, cols;
-    uint64_t euclidean(xy src, xy dest);
+    static uint64_t euclidean(xy src, xy dest);
 
-    xy getNeighbor(std::pair<int, int> pair, int i);
-
-    std::list<AStarNode *>::iterator findNodeWithLeastFScore(std::list<AStarNode *> vector);
+    static xy getNeighbor(std::pair<int, int> pair, int i);
 
     bool safe(xy pair);
 
-    AStarNode *findNodeInOpen(std::list<AStarNode *> vector, std::pair<int, int> pair);
+    static AStarNode *findNodeInOpen(const std::list<AStarNode *>& vector, std::pair<int, int> pair);
 
     uint64_t manhattan(xy src, xy dest);
 };

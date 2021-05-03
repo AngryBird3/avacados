@@ -7,7 +7,9 @@
 #include <set>
 #include <vector>
 #include <string>
-#include <iostream>
+
+// This file contains BFS implenetation where Robot moves to nearest neighbor (avacado) in each step till it visits
+// all avacado nodes
 
 std::pair<MazeNode*, int> DoBFS::find_shortest_path(MazeNode* root)
 {
